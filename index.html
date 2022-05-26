@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="./vendor/normalize.css">
+  <meta name="description" content="Четвёртая проектная работа">
+  <meta name="keywords" content="html, css">
+  <meta name="author" content="Егор Матылицкий">
+  <title>Проект Место</title>
+</head>
+<body class="page">
+  <header class="header">
+    <img src="./image/headerLogo.svg" alt="Логотип" class="header__logo">
+    <div class="header__bottom-line">
+    </div>
+  </header>
+  <main class="content">
+    <section class="profile">
+      <div class="profile__container">
+        <img src="./image/avatar.svg" alt="Аватар" class="profile__avatar">
+        <div class="profile__info">
+          <div class="profile__info-edit">
+            <h1 class="profile__title">Жак-Ив Кусто</h1>
+            <button class="profile__edit-button" type="button"></button>
+          </div>
+          <h3 class="profile__subtitle">Исследователь океана</h3>
+        </div>
+      </div>
+      <button class="profile__add-button" class="button"></button>
+    </section>
+    <section class="elements">
+      <div class="element">
+        <img src="./image/Karachaevsk.jpg" alt="Карачаевск" class="element__image">
+        <div class="element__container">
+          <h3 class="element__title">Карачаевск</h3>
+          <button class="element__like-icon" type="button"></button>
+        </div>
+      </div>
+      <div class="element">
+        <img src="./image/Elbrus.jpg" alt="Гора Эльбрус" class="element__image">
+        <div class="element__container">
+          <h3 class="element__title">Гора Эльбрус</h3>
+          <button src="./image/Like.svg" alt="Лайк" class="element__like-icon"></button>
+        </div>
+      </div>
+      <div class="element">
+        <img src="./image/Dombaj.jpg" alt="Домбай" class="element__image">
+        <div class="element__container">
+          <h3 class="element__title">Домбай</h3>
+          <button src="./image/Like.svg" alt="Лайк" class="element__like-icon"></button>
+        </div>
+      </div>
+      <div class="element">
+        <img src="./image/Elbrus2.jpg" alt="Гора Эльбрус" class="element__image">
+        <div class="element__container">
+          <h3 class="element__title">Гора Эльбрус</h3>
+          <button src="./image/Like.svg" alt="Лайк" class="element__like-icon"></button>
+        </div>
+      </div>
+      <div class="element">
+        <img src="./image/Dombaj2.jpg" alt="Домбай" class="element__image">
+        <div class="element__container">
+          <h3 class="element__title">Домбай</h3>
+          <button src="./image/Like.svg" alt="Лайк" class="element__like-icon"></button>
+        </div>
+      </div>
+      <div class="element">
+        <img src="./image/Karachaevsk2.jpg" alt="Карачаево-Черкесия" class="element__image">
+        <div class="element__container">
+          <h3 class="element__title">Карачаево-Черкесия</h3>
+          <button src="./image/Like.svg" alt="Лайк" class="element__like-icon"></button>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="footer">
+    <p class="footer__copyright">&copy; 2022 Mesto Russia</p>
+  </footer>
+  <div class="popup">
+    <div class="popup__container">
+      <form class="form">
+        <button type="button" class="form__btn-close"></button>
+        <h2 class="form__title">Редактировать профиль</h2>
+        <input type="text" class="form__input-name" placeholder="Ваше имя" required>
+        <input type="text" class="form__input-profession" placeholder="Ваша профессия" required>
+        <button class="form__btn-save" type="submit">Сохранить</button>
+      </form>
+    </div>
+  </div>
+  <script src="./script.js"></script>
+</body>
+</html>

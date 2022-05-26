@@ -1,0 +1,9 @@
+.element {
+  width: min-content;
+  height: 361px;
+  display: grid;
+  grid-template: 282px/1fr;
+  background-color: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+}
