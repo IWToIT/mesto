@@ -2,4 +2,4 @@
 
 Проект демонстрирует работу примитивного JS. Используются адаптивная верстка, грид-сетка.
 
-Ссылка на GH-pages: https://iwtoit.github.io/mesto/
+Ссылка на GH-pages: https://iwtoit.github.io/mesto/index.html
