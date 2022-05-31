@@ -1,7 +1,7 @@
 .element__like-icon {
   width: 22px;
   height: 19px;
-  background-image: url(../../../image/Like-min.jpg);
+  background-image: url(../../../image/Like.svg);
   background-repeat: no-repeat;
   background-size: contain;
   background-color: transparent;
@@ -11,4 +11,8 @@
 .element__like-icon:hover {
   transition: 0.3s;
   opacity: .5;
+}
+.element__like-icon:active {
+  background-image: url(../../../image/Like-act.svg);
+  opacity: 1;
 }
