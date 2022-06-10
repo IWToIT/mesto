@@ -1,3 +1,4 @@
+//Окно изменения профиля
 
 let popUp = document.querySelector('.popup');//находим Pop-up окно
 let popUpOpen = document.querySelector('.profile__edit-button');//находим Edit button
@@ -33,6 +34,7 @@ function formSubmitHandler (evt) {//функция отправки формы �
 
 formSubmit.addEventListener('submit', formSubmitHandler);
 
+//Окно добавления фото
 
 let popUpAdd = document.querySelector('.popup-add');//находим Popup Add окно
 let popUpAddOpen = document.querySelector('.profile__add-button');//находим Add button
@@ -49,3 +51,7 @@ function openPopUpAdd() { //функция открытия
 } ;
 
 popUpAddOpen.addEventListener('click', openPopUpAdd);
+
+const closePopUpAdd = () =>  popUpAdd.classList.remove('popup-add_open');
+
+popUpAddClose.addEventListener('click', closePopUpAdd);
