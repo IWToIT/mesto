@@ -1,4 +1,4 @@
-.popup__container {
+.popup-add__container {
   width: min-content;
   min-height: min-content;
   display: flex;
@@ -9,7 +9,7 @@
   position: relative;
 }
 @media screen and (max-width: 767px) {
-  .popup__container {
+  .popup-add__container {
     margin: 0 19px;
     padding: 25px 22px;
   }  
