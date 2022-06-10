@@ -32,3 +32,20 @@ function formSubmitHandler (evt) {//функция отправки формы �
 }
 
 formSubmit.addEventListener('submit', formSubmitHandler);
+
+
+let popUpAdd = document.querySelector('.popup-add');//находим Popup Add окно
+let popUpAddOpen = document.querySelector('.profile__add-button');//находим Add button
+let popUpAddClose = document.querySelector('.popup-add__btn-close');//находим Close button
+
+let placeName = document.querySelector('.element__title');//находим имя автора на стр.
+let linkImage = document.querySelector('.profile__subtitle');//находим профессию на стр.
+let placeNameEdit = document.querySelector('.popup-add__input_type_place'); // находим поле Имя
+let linkImageEdit = document.querySelector('.popup-add__input_type_link');// находим поле Профессия
+
+function openPopUpAdd() { //функция открытия
+    popUpAdd.classList.add('popup-add_open');//добавляем класс 
+    placeNameEdit.value = placeName.textContent;//присваиваем значение
+} ;
+
+popUpAddOpen.addEventListener('click', openPopUpAdd);
