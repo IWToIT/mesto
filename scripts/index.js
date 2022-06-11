@@ -30,6 +30,8 @@ function formSubmitHandler (evt) {//функция отправки формы �
     authorName.textContent = authorNameEdit.value;
     authorProfession.textContent = authorProfessionEdit.value;
     closePopUp();
+
+    formSubmit.reset();
 }
 
 formSubmit.addEventListener('submit', formSubmitHandler);
@@ -48,6 +50,8 @@ let linkImageEdit = document.querySelector('.popup-add__input_type_link');// н�
 function openPopUpAdd() { //функция открытия
     popUpAdd.classList.add('popup-add_open');//добавляем класс 
     placeNameEdit.value = placeName.textContent;//присваиваем значение
+
+    popUpAddOpen.reset();
 } ;
 
 popUpAddOpen.addEventListener('click', openPopUpAdd);
@@ -55,3 +59,57 @@ popUpAddOpen.addEventListener('click', openPopUpAdd);
 const closePopUpAdd = () =>  popUpAdd.classList.remove('popup-add_open');
 
 popUpAddClose.addEventListener('click', closePopUpAdd);
+
+//Добавление карточек из др файла
+const cardElement = document.querySelector('.elements');
+const elementTemplate = document.querySelector('.template');
+const deleteElementButton = evt => evt.currentTarget.closest('.element');
+const likeElementButton = evt => evt.target.classList.toggle('element__like-icon_active');
+//
+
+//Функция удаления карточки
+const imageDelete =  evt => {
+    const cards = deleteElementButton(evt);
+
+    cards.remove();
+};
+//
+
+//Функция лайка
+const imageLike = evt => {
+    const cards = likeElementButton(evt);
+
+    cards.remove();
+};
+//
+
+//Функция вставки начальных 6 карточек
+function openStartCard(link, name) {
+    const cards = elementTemplate.content.querySelector('.element').cloneNode(true);
+
+    cards.querySelector('.element__title').textContent = name;
+    cards.querySelector('.element__image').alt = name;
+    cards.querySelector('.element__image').src = link;
+
+    cards.querySelector('.element__btn-delete').addEventListener('click', imageDelete);//Вызов Функции удаления карточки
+    cards.querySelector('.element__like-icon').addEventListener('click', imageLike);//Вызов функции добавления лайка под фото
+
+
+    return cards;
+
+};
+
+initialCards.forEach((element) => {
+    const el = openStartCard(element.link, element.name);
+    cardElement.prepend(el);
+});
+//
+
+
+
+
+// function addCards(name, link) {
+//     const cardNew = openStartCard(name, link);
+//     cardElement.prepend(element);
+// }
+

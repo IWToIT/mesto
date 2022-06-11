@@ -12,7 +12,3 @@
   transition: 0.3s;
   opacity: .5;
 }
-.element__like-icon:active {
-  background-image: url(../../../image/Like-act.svg);
-  opacity: 1;
-}

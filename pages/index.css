@@ -24,6 +24,8 @@
 @import url(../blocks/element/__container/element__container.css);
 @import url(../blocks/element/__title/element__title.css);
 @import url(../blocks/element/__like-icon/element__like-icon.css);
+@import url(../blocks/element/__like-icon/_active/element__like-icon_active.css);
+@import url(../blocks/element/__btn-delete/element__btn-delete.css);
 
 @import url(../blocks/footer/footer.css);
 @import url(../blocks/footer/__copyright/footer__copyright.css);
@@ -45,3 +47,12 @@
 @import url(../blocks/popup-add/__form/popup-add__form.css);
 @import url(../blocks/popup-add/__input/popup-add__input.css);
 @import url(../blocks/popup-add/__title/popup-add__title.css);
+
+@import url(../blocks/popup-scale/popup-scale.css);
+@import url(../blocks/popup-scale/_open/popup-scale_open.css);
+@import url(../blocks/popup-scale/__container/popup-scale__container.css);
+@import url(../blocks/popup-scale/__btn-close/popup-scale__btn-close.css);
+@import url(../blocks/popup-scale/__figure/popup-scale__figure.css);
+@import url(../blocks/popup-scale/__form/popup-scale__form.css);
+@import url(../blocks/popup-scale/__image/popup-scale__image.css);
+@import url(../blocks/popup-scale/__title/popup-scale__title.css);

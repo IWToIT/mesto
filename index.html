@@ -29,48 +29,16 @@
       <button class="profile__add-button" type="button"></button>
     </section>
     <section class="elements">
-      <div class="element">
-        <img src="./image/Karachaevsk-min.jpg" alt="Карачаевск" class="element__image">
-        <div class="element__container">
-          <h2 class="element__title">Карачаевск</h2>
-          <button class="element__like-icon" type="button"></button>
-        </div>
-      </div>
-      <div class="element">
-        <img src="./image/Elbrus-min.jpg" alt="Гора Эльбрус" class="element__image">
-        <div class="element__container">
-          <h2 class="element__title">Гора Эльбрус</h2>
-          <button class="element__like-icon" type="button"></button>
-        </div>
-      </div>
-      <div class="element">
-        <img src="./image/Dombaj-min.jpg" alt="Домбай" class="element__image">
-        <div class="element__container">
-          <h2 class="element__title">Домбай</h2>
-          <button class="element__like-icon" type="button"></button>
-        </div>
-      </div>
-      <div class="element">
-        <img src="./image/Elbrus-min.jpg" alt="Гора Эльбрус" class="element__image">
-        <div class="element__container">
-          <h2 class="element__title">Гора Эльбрус</h2>
-          <button class="element__like-icon" type="button"></button>
-        </div>
-      </div>
-      <div class="element">
-        <img src="./image/Dombaj-min.jpg" alt="Домбай" class="element__image">
-        <div class="element__container">
-          <h2 class="element__title">Домбай</h2>
-          <button class="element__like-icon" type="button"></button>
-        </div>
-      </div>
-      <div class="element">
-        <img src="./image/Karachaevsk-min.jpg" alt="Карачаево-Черкесия" class="element__image">
-        <div class="element__container">
-          <h2 class="element__title">Карачаево-Черкесия</h2>
-          <button class="element__like-icon" type="button"></button>
-        </div>
-      </div>
+      <template class="template">
+        <article class="element">
+          <img class="element__image" src="default" alt="">
+          <button class="element__btn-delete" type="button"></button>
+          <div class="element__container">
+            <h2 class="element__title"></h2>
+            <button class="element__like-icon" type="button"></button>
+          </div>
+        </article>
+      </template>
     </section>
   </main>
   <footer class="footer">
@@ -90,7 +58,7 @@
   <div class="popup-add">
     <div class="popup-add__container">
       <button type="button" class="popup-add__btn-close"></button>
-      <h2 class="popup-add__title">Редактировать профиль</h2>
+      <h2 class="popup-add__title">Новое место</h2>
       <form class="popup-add__form" name="form">
         <input type="text" class="popup-add__input popup-add__input_type_place" name="data" placeholder="Название" required>
         <input type="text" class="popup-add__input popup-add__input_type_link" name="data" placeholder="Ссылка на картинку" required>
@@ -98,17 +66,18 @@
       </form>
     </div>
   </div>
-  <!-- <div class="popup-scale">
+  <div class="popup-scale">
     <div class="popup-scale__container">
-      <button class="popup-scale__close-btn" aria-label="Закрытие формы" type="button"></button>
+      <button class="popup-scale__btn-close" aria-label="Закрытие формы" type="button"></button>
       <form class="popup-scale__form">
-        <figure class="popup-scale__figure">
+        <div class="popup-scale__figure">
           <img class="popup-scale__image" src="URL" alt="">
           <figcaption class="popup-scale__title"></figcaption>
-        </figure>
+        </div>
       </form>
     </div>
-  </div> -->
+  </div>
+  <script src="./scripts/cardsStart.js"></script>
   <script src="./scripts/index.js"></script>
 </body>
 </html>
