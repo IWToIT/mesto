@@ -36,7 +36,7 @@ const popUpScaleImageTitle = document.querySelector('.popup-scale__title');
 const cardElement = document.querySelector('.elements');
 const elementTemplate = document.querySelector('.template');
 
-const closePopUpAdd = () =>  popUpAdd.classList.remove('popup-add_open');
+
 const deleteElementButton = evt => evt.currentTarget.closest('.element');
 const likeElementButton = evt => evt.target.classList.toggle('element__like-icon_active');
 const closePopUpScale = () =>  popUpScaleOpen.classList.remove('popup-scale_open');
@@ -68,6 +68,11 @@ function openPopUpAdd() { //функция открытия
     linkImageEdit.value = linkImage.src;
     popUpAddOpen.reset();
 } ;
+
+function closePopUpAdd () {
+    popUpAdd.classList.remove('popup-add_open');
+}
+
 //Функция удаления
 const imageDelete =  evt => {
     const cards = deleteElementButton(evt);
@@ -112,11 +117,16 @@ function openPopUpScale(cards) {
     popUpScaleImageTitle.textContent = cards.alt;
 };
 
+function renderNewCard(elementName, element) {
+    elementName.prepend(element);
+  };
+  
 //функция отправки формы с последующим закрытием popup-add окна
 const imageSubmit = evt => {
     evt.preventDefault();
-    placeName.textContent = placeNameEdit.value;
-    popUpScaleImageOpen.link = linkImageEdit.value;
+    const newElement = openStartCard(linkImageEdit.value, placeNameEdit.value);
+    renderNewCard(cardElement, newElement);
+    formSubmit.reset();
     closePopUpAdd();
 }
 
