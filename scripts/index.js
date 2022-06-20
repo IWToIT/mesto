@@ -11,7 +11,6 @@ const popUpAddOpen = document.querySelector('.profile__add-button');//наход
 //Закрытие
 const popUpClose = document.querySelectorAll('.popup__btn-close');//находим Close button
 
-
 const authorName = document.querySelector('.profile__title');//находим имя автора на стр.
 const authorProfession = document.querySelector('.profile__subtitle');//находим профессию на стр.
 const authorNameEdit = document.querySelector('.popup__input_type_name'); // находим поле Имя
@@ -19,28 +18,15 @@ const authorProfessionEdit = document.querySelector('.popup__input_type_professi
 
 const formSubmit = document.querySelector('.popup__form');
 
-const linkImage = document.querySelector('.profile__subtitle');
-const placeNameEdit = document.querySelector('.popup-add__input_type_place'); // находим поле место
-const linkImageEdit = document.querySelector('.popup-add__input_type_link');// находим поле ссылка
+const placeNameEdit = document.querySelector('.popup__input_type_place'); // находим поле место
+const linkImageEdit = document.querySelector('.popup__input_type_link');// находим поле ссылка
 
-
-
-const formPopUpAdd = document.querySelector('.popup-add__form');
-const inputPlace = document.querySelector('.popup-add__input_type_place');
-const inputLink = document.querySelector('.popup-add__input_type_link');
-
-
-
-
-const popUpScaleImage = document.querySelector('.popup-scale__image');
-const popUpScaleImageTitle = document.querySelector('.popup-scale__title');
-
+const formPopUpAdd = document.querySelector('.popup__form_type_add-card');
+const popUpScaleImage = document.querySelector('.popup__image-scale');
+const popUpScaleImageTitle = document.querySelector('.popup__title-scale');
 const cardElement = document.querySelector('.elements');
 const elementTemplate = document.querySelector('.template');
-const deleteButton = document.querySelector('.element__btn-delete');
 
-
-const likeElementButton = evt => evt.target.classList.toggle('element__like-icon_active');
 
 function openPopup(popup) {
     popup.classList.add('popup_open');
@@ -85,7 +71,6 @@ const imageDelete = evt => {
 };
 
 //Функция лайка
-
 const imageLike = evt => {
     evt.target.classList.toggle('element__like-icon_active');
 };
@@ -99,9 +84,8 @@ function createCard(link, name) {
     imageScale.alt = name;
     imageScale.src = link;
 
-    //Вызов Функции удаления карточки
     cards.querySelector('.element__btn-delete').addEventListener('click', imageDelete);
-    cards.querySelector('.element__like-icon').addEventListener('click', imageLike);  //Вызов функции добавления лайка под фото
+    cards.querySelector('.element__like-icon').addEventListener('click', imageLike);
     imageScale.addEventListener('click', () => openPopUpScale(imageScale));
 
     return cards;
@@ -130,7 +114,6 @@ popUpOpen.addEventListener('click', openPopUp);
 popUpAddOpen.addEventListener('click', openPopUpAdd);
 formSubmit.addEventListener('submit', formSubmitHandler);
 formPopUpAdd.addEventListener('submit', imageSubmit);
-
 popUpClose.forEach((item) => {
     item.addEventListener('click', () => closePopup(item.closest('.popup')));
 });

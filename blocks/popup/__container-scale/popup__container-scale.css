@@ -1,4 +1,4 @@
-.popup-scale__container {
+.popup__container-scale {
   width: min-content;
   min-height: min-content;
   display: flex;

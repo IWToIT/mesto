@@ -33,20 +33,12 @@
 @import url(../blocks/popup/popup.css);
 @import url(../blocks/popup/_open/popup_open.css);
 @import url(../blocks/popup/__container/popup__container.css);
+@import url(../blocks/popup/__container-scale/popup__container-scale.css);
 @import url(../blocks/popup/__btn-close/popup__btn-close.css);
 @import url(../blocks/popup/__btn-save/popup__btn-save.css);
 @import url(../blocks/popup/__form/popup__form.css);
+@import url(../blocks/popup/__form-scale/popup__form-scale.css);
 @import url(../blocks/popup/__input/popup__input.css);
 @import url(../blocks/popup/__title/popup__title.css);
-
-@import url(../blocks/popup-add/__container/popup-add__container.css);
-@import url(../blocks/popup-add/__btn-save/popup-add__btn-save.css);
-@import url(../blocks/popup-add/__form/popup-add__form.css);
-@import url(../blocks/popup-add/__input/popup-add__input.css);
-@import url(../blocks/popup-add/__title/popup-add__title.css);
-
-@import url(../blocks/popup-scale/__container/popup-scale__container.css);
-@import url(../blocks/popup-scale/__figure/popup-scale__figure.css);
-@import url(../blocks/popup-scale/__form/popup-scale__form.css);
-@import url(../blocks/popup-scale/__image/popup-scale__image.css);
-@import url(../blocks/popup-scale/__title/popup-scale__title.css);
+@import url(../blocks/popup/__title-scale/popup__title-scale.css);
+@import url(../blocks/popup/__image-scale/popup__image-scale.css);
