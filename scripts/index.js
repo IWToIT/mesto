@@ -30,12 +30,20 @@ const elementTemplate = document.querySelector('.template');
 
 function openPopup(popup) {
     popup.classList.add('popup_open');
+    document.addEventListener('keydown', closePopupEsc);
 };
 
 function closePopup(popup) {
     popup.classList.remove('popup_open');
+    document.removeEventListener('keydown', closePopupEsc);
 };
 
+function closePopupEsc(evt) {
+    if(evt.key === 'Escape') {
+        const popupOpen = document.querySelector('.popup_open');
+        closePopup(popupOpen);
+    }
+}
 
 function openPopUp() { //функция открытия
     openPopup(popUp);
