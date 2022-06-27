@@ -112,11 +112,11 @@ const imageSubmit = evt => {
     evt.preventDefault();
     const newElement = createCard(linkImageEdit.value, placeNameEdit.value);
     renderNewCard(cardElement, newElement);
-    formSubmit.reset();
     const submitButton = evt.target.querySelector('.popup__btn-save');
     const buttonInactive = {inactiveButtonClass: 'popup__btn-save_inactive'};
     buttonDisabled(submitButton, buttonInactive);
     closePopup(popUpAdd);
+    formSubmit.reset();
 };
 
 popupWindow.forEach((element) => {
