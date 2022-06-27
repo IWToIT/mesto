@@ -21,12 +21,11 @@ const cardAddForm = document.querySelector('.popup__form_type_add-card');
 const placeNameEdit = document.querySelector('.popup__input_type_place'); // находим поле место
 const linkImageEdit = document.querySelector('.popup__input_type_link');// находим поле ссылка
 
-const formPopUpAdd = document.querySelector('.popup__form_type_add-card');
 const popUpScaleImage = document.querySelector('.popup__image-scale');
 const popUpScaleImageTitle = document.querySelector('.popup__title-scale');
 const cardElement = document.querySelector('.elements');
 const elementTemplate = document.querySelector('.template');
-const profileWindows = document.querySelectorAll('.popup');
+const popups = document.querySelectorAll('.popup');
 
 
 function openPopup(popup) {
@@ -121,7 +120,7 @@ const submitImage = evt => {
     closePopup(popUpAdd);
 };
 
-profileWindows.forEach((element) => {
+popups.forEach((element) => {
     element.addEventListener('mousedown', (evt) => {
         if(evt.target.classList.contains('popup_open') || evt.target.classList.contains('popup__btn-close')) {
             closePopup(element);
@@ -133,5 +132,4 @@ profileOpenBtn.addEventListener('click', openProfilePopup);
 popUpAddOpen.addEventListener('click', openPopUpAdd);
 profileForm.addEventListener('submit', handleProfileFormSubmit);
 cardAddForm.addEventListener('submit', submitImage);
-formPopUpAdd.addEventListener('submit', submitImage);
 
