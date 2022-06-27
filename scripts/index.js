@@ -1,4 +1,3 @@
-
 //Окнa 
 const popUp = document.querySelector('.popup_type_edit-profile');//находим Pop-up окно
 const popUpAdd = document.querySelector('.popup_type_add-card');//находим Popup Add окно
@@ -26,6 +25,7 @@ const popUpScaleImage = document.querySelector('.popup__image-scale');
 const popUpScaleImageTitle = document.querySelector('.popup__title-scale');
 const cardElement = document.querySelector('.elements');
 const elementTemplate = document.querySelector('.template');
+const popupWindow = document.querySelectorAll('.popup');
 
 
 function openPopup(popup) {
@@ -115,8 +115,19 @@ const imageSubmit = evt => {
     const newElement = createCard(linkImageEdit.value, placeNameEdit.value);
     renderNewCard(cardElement, newElement);
     formSubmit.reset();
+    const submitButton = evt.target.querySelector('.popup__btn-save');
+    const buttonInactive = {inactiveButtonClass: 'popup__btn-save_inactive'};
+    buttonDisabled(submitButton, buttonInactive);
     closePopup(popUpAdd);
 };
+
+popupWindow.forEach((element) => {
+    element.addEventListener('mousedown', (evt) => {
+        if(evt.target.classList.contains('popup_open') || evt.target.classList.contains('popup__btn-close')) {
+            closePopup(element);
+        };
+    });
+});
 
 popUpOpen.addEventListener('click', openPopUp);
 popUpAddOpen.addEventListener('click', openPopUpAdd);
@@ -125,3 +136,4 @@ formPopUpAdd.addEventListener('submit', imageSubmit);
 popUpClose.forEach((item) => {
     item.addEventListener('click', () => closePopup(item.closest('.popup')));
 });
+
