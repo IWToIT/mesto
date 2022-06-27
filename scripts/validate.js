@@ -26,7 +26,7 @@ const hasInvalidInput = (inputList) => {
   });
 };
 
-const buttonDisabled = (buttonElement, elements) => {
+const disableButton = (buttonElement, elements) => {
   buttonElement.classList.add(elements.inactiveButtonClass);
   buttonElement.disabled = true;
 };
@@ -38,7 +38,7 @@ const buttonActive = (buttonElement, elements) => {
 
 const toggleButtonState = (inputList, buttonElement, elements) => {
   if (hasInvalidInput(inputList)) {
-    buttonDisabled(buttonElement, elements);
+    disableButton(buttonElement, elements);
   } else {
     buttonActive(buttonElement, elements);
   };
