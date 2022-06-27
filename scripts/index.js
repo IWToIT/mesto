@@ -47,8 +47,6 @@ function closePopupEsc(evt) {
 
 function openPopUp() { //функция открытия
     openPopup(popUp);
-    authorNameEdit.value = authorName.textContent;//присваиваем значение
-    authorProfessionEdit.value = authorProfession.textContent;
 };
 
 function openPopUpAdd() { //функция открытия
