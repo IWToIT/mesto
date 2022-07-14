@@ -6,6 +6,9 @@ export default class Card {
     this._imageLink = data.link;
     this._cardSelector = cardSelector;
     this._element = this._getTemplate();
+    this._popupScaleImg = document.querySelector(".popup_type_scale-image");
+    this._forImgScale = document.querySelector(".popup__image-scale");
+    this._forImgTitleScale = document.querySelector(".popup__title-scale");
   };
 
   _getTemplate() {
@@ -26,15 +29,11 @@ export default class Card {
     evt.target.classList.toggle('element__like-icon_active');
   };
 
-  _scaleImage(evt) {
-    const popupScaleImg = document.querySelector(".popup_type_scale-image");
-    const forImgScale = document.querySelector(".popup__image-scale");
-    const forImgTitleScale = document.querySelector(".popup__title-scale");
-    forImgScale.src = evt.target.src;
-    forImgScale.alt = evt.target.alt;
-    forImgTitleScale.textContent = evt.target.alt;
-
-    return openPopup(popupScaleImg);
+  _scaleImage = evt => {
+    this._forImgScale.src = evt.target.src;
+    this._forImgScale.alt = evt.target.alt;
+    this._forImgTitleScale.textContent = evt.target.alt;
+    return openPopup(this._popupScaleImg);
   };
 
   _setEventListener() {
