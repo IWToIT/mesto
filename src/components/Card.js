@@ -1,14 +1,10 @@
-import { openPopup } from "./index.js";
-
 export default class Card {
-  constructor(data, cardSelector) {
+  constructor(data, cardSelector, handleCardClick) {
     this._title = data.name;
     this._imageLink = data.link;
     this._cardSelector = cardSelector;
     this._element = this._getTemplate();
-    this._popupScaleImg = document.querySelector(".popup_type_scale-image");
-    this._forImgScale = document.querySelector(".popup__image-scale");
-    this._forImgTitleScale = document.querySelector(".popup__title-scale");
+    this._handleCardClick = handleCardClick;
   };
 
   _getTemplate() {
@@ -29,13 +25,6 @@ export default class Card {
     evt.target.classList.toggle('element__like-icon_active');
   };
 
-  _scaleImage = evt => {
-    this._forImgScale.src = evt.target.src;
-    this._forImgScale.alt = evt.target.alt;
-    this._forImgTitleScale.textContent = evt.target.alt;
-    return openPopup(this._popupScaleImg);
-  };
-
   _setEventListener() {
     this._image = this._element.querySelector(".element__image");
     this._element
@@ -44,7 +33,7 @@ export default class Card {
     this._element
       .querySelector(".element__btn-delete")
       .addEventListener("click", this._deleteCard);
-    this._image.addEventListener("click", this._scaleImage);
+    this._image.addEventListener("click", this._handleCardClick);
   };
 
   generateCard() {

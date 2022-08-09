@@ -1,26 +1,26 @@
 export default class FormValidator {
-  constructor(selectorsNames, formElement) {
+  constructor(selectorNames, formElement) {
     this._formElement = formElement;
-    this._selectorsNames = selectorsNames;
+    this._selectorNames = selectorNames;
     this._buttonElement = this._formElement.querySelector(
-      this._selectorsNames.submitButtonSelector
+      this._selectorNames.submitButtonSelector
     );
     this._inputList = Array.from(
-      formElement.querySelectorAll(this._selectorsNames.inputSelector)
+      formElement.querySelectorAll(this._selectorNames.inputSelector)
     );
   }
 
   _showInputError(inputElement, errorMessage) {
     const errorElement = this._formElement.querySelector(`.${inputElement.id}-error`);
-    inputElement.classList.add(this._selectorsNames.inputErrorClass);
-    errorElement.classList.add(this._selectorsNames.errorClass);
+    inputElement.classList.add(this._selectorNames.inputErrorClass);
+    errorElement.classList.add(this._selectorNames.errorClass);
     errorElement.textContent = errorMessage;
   }
 
   _hideInputError = (inputElement) => {
     const errorElement = this._formElement.querySelector(`.${inputElement.id}-error`);
-    inputElement.classList.remove(this._selectorsNames.inputErrorClass);
-    errorElement.classList.remove(this._selectorsNames.errorClass);
+    inputElement.classList.remove(this._selectorNames.inputErrorClass);
+    errorElement.classList.remove(this._selectorNames.errorClass);
     errorElement.textContent = '';
   }
 
@@ -39,12 +39,12 @@ export default class FormValidator {
   }
 
   _disableButton = () => {
-    this._buttonElement.classList.add(this._selectorsNames.inactiveButtonClass);
+    this._buttonElement.classList.add(this._selectorNames.inactiveButtonClass);
     this._buttonElement.disabled = true;
   }
 
   _buttonActive = () => {
-    this._buttonElement.classList.remove(this._selectorsNames.inactiveButtonClass);
+    this._buttonElement.classList.remove(this._selectorNames.inactiveButtonClass);
     this._buttonElement.disabled = false;
   }
 
