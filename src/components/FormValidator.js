@@ -34,8 +34,8 @@ export default class FormValidator {
 
   _hasInvalidInput = () => {
     return this._inputList.some((item) => {
-    return !item.validity.valid;
-  })
+      return !item.validity.valid;
+    })
   }
 
   _disableButton = () => {
@@ -43,7 +43,7 @@ export default class FormValidator {
     this._buttonElement.disabled = true;
   }
 
-  _buttonActive = () => {
+  _enableButton = () => {
     this._buttonElement.classList.remove(this._selectorNames.inactiveButtonClass);
     this._buttonElement.disabled = false;
   }
@@ -52,7 +52,7 @@ export default class FormValidator {
     if (this._hasInvalidInput()) {
       this._disableButton();
     } else {
-      this._buttonActive();
+      this._enableButton();
     };
   }
 

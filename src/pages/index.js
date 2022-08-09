@@ -25,12 +25,12 @@ import {
 const validatorEditAuthor = new FormValidator(selectorsNamesForValidation, popupFormEditAuthor);
 const validatorAddCard = new FormValidator(selectorsNamesForValidation, cardAddForm);
 
-const card = new Section(
+const cardsSection = new Section(
     {
         items: initialCards,
         renderer: (item) => {
             const cardItem = handleNewCard(item)
-            card.addNewItem(cardItem);
+            cardsSection.addNewItem(cardItem);
         },
     },
     cardElement
@@ -49,7 +49,7 @@ const popupProfile = new PopupWithForm (profilePopup, (data) => dataUserInfo.set
 
 const popupNewCard = new PopupWithForm (popUpAdd, (data) => 
     {
-        card.addNewItem(handleNewCard(data));
+        cardsSection.addNewItem(handleNewCard(data));
     }
 );
 const popupScaleImage = new PopupWithImage (popupForScaleImage);
@@ -65,7 +65,7 @@ function handleNewCard(card) {
 
 validatorEditAuthor.enableValidation();
 validatorAddCard.enableValidation();
-card.rendererItem();
+cardsSection.renderItems();
 popupProfile.setEventListeners();
 popupNewCard.setEventListeners();
 popupScaleImage.setEventListeners();

@@ -46,7 +46,6 @@ export const authorProfession = document.querySelector('.profile__subtitle');//�
 export const authorNameEdit = document.querySelector('.popup__input_type_name'); // находим поле Имя
 export const authorProfessionEdit = document.querySelector('.popup__input_type_profession');// находим поле Профессия
 
-export const profileForm = document.querySelector('.popup__form');
 export const cardAddForm = document.querySelector('.popup__form_type_add-card');
 export const popupFormEditAuthor = document.querySelector('.popup__form_type_edit-author');
 
