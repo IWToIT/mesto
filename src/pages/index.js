@@ -38,8 +38,8 @@ const cardsSection = new Section(
 
 const dataUserInfo = new UserInfo (
     {
-        userName: authorName,
-        userInfo: authorProfession,
+        userNameElement: authorName,
+        userInfoElement: authorProfession,
     }
     
 );
@@ -72,9 +72,9 @@ popupScaleImage.setEventListeners();
 
 profileOpenBtn.addEventListener('click', () => {
     popupProfile.open();
-    const {userName, userInfo} = dataUserInfo.getUserInfo();
-    authorNameEdit.value = userName;
-    authorProfessionEdit.value = userInfo;
+    const {userNameElement, userInfoElement} = dataUserInfo.getUserInfo();
+    authorNameEdit.value = userNameElement;
+    authorProfessionEdit.value = userInfoElement;
     validatorEditAuthor.resetValidation();
 });
 popUpAddOpen.addEventListener('click', () => {
