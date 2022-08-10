@@ -44,7 +44,6 @@ const dataUserInfo = new UserInfo (
     
 );
 
-
 const popupProfile = new PopupWithForm (profilePopup, (data) => dataUserInfo.setUserInfo(data));
 
 const popupNewCard = new PopupWithForm (popUpAdd, (data) => 
@@ -52,6 +51,7 @@ const popupNewCard = new PopupWithForm (popUpAdd, (data) =>
         cardsSection.addNewItem(handleNewCard(data));
     }
 );
+
 const popupScaleImage = new PopupWithImage (popupForScaleImage);
 
 function handleCardClick (evt) {
@@ -72,9 +72,9 @@ popupScaleImage.setEventListeners();
 
 profileOpenBtn.addEventListener('click', () => {
     popupProfile.open();
-    const {userNameElement, userInfoElement} = dataUserInfo.getUserInfo();
-    authorNameEdit.value = userNameElement;
-    authorProfessionEdit.value = userInfoElement;
+    const {userName, userInfo} = dataUserInfo.getUserInfo();
+    authorNameEdit.value = userName;
+    authorProfessionEdit.value = userInfo;
     validatorEditAuthor.resetValidation();
 });
 popUpAddOpen.addEventListener('click', () => {
