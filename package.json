@@ -9,7 +9,7 @@
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist"
   },
-  "author": "Amelin Andrey",
+  "author": "Egor Matylitski",
   "license": "ISC",
   "devDependencies": {
     "@babel/core": "^7.18.6",

@@ -8,6 +8,7 @@ export default class FormValidator {
     this._inputList = Array.from(
       formElement.querySelectorAll(this._selectorNames.inputSelector)
     );
+    this._buttonElementText = this._buttonElement.textContent
   }
 
   _showInputError(inputElement, errorMessage) {
@@ -58,6 +59,7 @@ export default class FormValidator {
 
   resetValidation = () => {
     this._toggleButtonState();
+    this._buttonElement.textContent = this._buttonElementText
 
     this._inputList.forEach((item) => {
       this._hideInputError(item);

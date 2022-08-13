@@ -15,8 +15,8 @@
   </header>
   <main class="content">
     <section class="profile">
-      <div class="profile__container">
-        <img src="<%=require('./image/Avarat-min.jpg')%>" alt="Аватар" class="profile__avatar">
+      <div class="profile__avatar-container">
+        <img src="URL" alt="Аватар" class="profile__avatar">
         <div class="profile__info">
           <div class="profile__info-edit">
             <h1 class="profile__title">Жак-Ив Кусто</h1>
@@ -35,6 +35,7 @@
           <div class="element__container">
             <h2 class="element__title"></h2>
             <button class="element__like-icon" type="button"></button>
+            <span class="element__like-amount"></span>
           </div>
         </article>
       </template>
@@ -81,6 +82,26 @@
           <img class="popup__image-scale" src="URL" alt="">
           <figcaption class="popup__title-scale"></figcaption>
         </div>
+      </form>
+    </div>
+  </div>
+  <div class="popup popup_type_remove-card">
+    <div class="popup__container">
+      <button class="popup__btn-close" aria-label="Закрытие формы" type="button"></button>
+      <form class="popup__form" novalidate>
+        <h2 class="popup__title">Вы уверены?</h2>
+        <button class="popup__btn-save" type="submit">Да</button>
+      </form>
+    </div>
+  </div>
+  <div class="popup popup_type_edit-avatar">
+    <div class="popup__container">
+      <button class="popup__btn-close" aria-label="Закрытие формы" type="button"></button>
+      <form class="popup__form popup__form_type_edit-avatar" novalidate>
+        <h2 class="popup__title">Обновить ватар</h2>
+        <input name="link" class="popup__input popup__input_type_avatar" placeholder="Ссылка на аватар" id="link-avatar-input" type="url" required />
+        <span class="popup__input-error link-avatar-input-error"></span>
+        <button class="popup__btn-save" type="submit">Сохранить</button>
       </form>
     </div>
   </div>
