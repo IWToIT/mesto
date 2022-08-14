@@ -34,3 +34,4 @@ export const profileAvatarEdit = document.querySelector('.profile__avatar-contai
 export const formForEditAvatar = popupAvatar.querySelector('.popup__form_type_edit-avatar');
 
 export const popupForDeleteCard = document.querySelector('.popup_type_remove-card');
+export const deleteCardPopupOpen = document.querySelector('.element__btn-deleete');

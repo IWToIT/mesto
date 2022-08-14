@@ -15,16 +15,19 @@
   </header>
   <main class="content">
     <section class="profile">
-      <div class="profile__avatar-container">
-        <img src="URL" alt="Аватар" class="profile__avatar">
+      <div class="profile__info-container">
+        <div class="profile__avatar-container">
+          <img src="URL" alt="Аватар" class="profile__avatar">
+        </div> 
         <div class="profile__info">
           <div class="profile__info-edit">
             <h1 class="profile__title">Жак-Ив Кусто</h1>
             <button class="profile__edit-button" type="button"></button>
           </div>
-          <p class="profile__subtitle">Исследователь океана</p>
+            <p class="profile__subtitle">Исследователь океана</p>
+          </div>
         </div>
-      </div>
+      </div>  
       <button class="profile__add-button" type="button"></button>
     </section>
     <section class="elements">
@@ -32,11 +35,9 @@
         <article class="element">
           <img class="element__image" src="default" alt="">
           <button class="element__btn-delete" type="button"></button>
-          <div class="element__container">
-            <h2 class="element__title"></h2>
-            <button class="element__like-icon" type="button"></button>
-            <span class="element__like-amount"></span>
-          </div>
+          <h2 class="element__title"></h2>
+          <button class="element__like-icon" type="button"></button>
+          <span class="element__like-amount"></span>
         </article>
       </template>
     </section>

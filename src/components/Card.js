@@ -24,7 +24,7 @@ export default class Card {
     return cardElement;
   };
 
-  _deleteCard(card) {
+  deleteCard(card) {
     card.remove();
     card = null;
   };
@@ -65,7 +65,7 @@ export default class Card {
     });
     this._element
       .querySelector(".element__btn-delete")
-      .addEventListener("click", this._handleDeleteCard(this._data, this._element));
+      .addEventListener("click",() => this._handleDeleteCard(this._data, this._element));
     this._image.addEventListener("click", this._handleCardClick);
   };
 

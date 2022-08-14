@@ -1,11 +1,11 @@
 .profile__info {
-  padding-left: 30px;
+  margin-left: 30px;
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
-@media screen and (max-width: 1023px)  {
+@media screen and (max-width: 767px)  {
   .profile__info {
-    padding-left: 0;
+    margin-left: 0;
   }
 }

@@ -54,7 +54,6 @@ const dataUserInfo = new UserInfo (
 
 const popupProfile = new PopupWithForm (profilePopup, (data) => {
     popupProfile.downloadProcces(true, 'Сохранение...');
-    console.log(data);
     api
         .changeProfile(data)
         .then((userInfo) => {
@@ -80,7 +79,7 @@ const popupNewCard = new PopupWithForm (popUpAdd, (data) => {
 
 const popupScaleImage = new PopupWithImage (popupForScaleImage);
 
-const popupDeleteCard = new PopupWithProcces (popupForDeleteCard, async function (data, card) {
+const popupDeleteCard = new PopupWithProcces (popupForDeleteCard,  function (data, card) {
     popupDeleteCard.downloadProcces(true, 'Удаление...');
     api
         .deleteCard(data._id)
@@ -135,7 +134,7 @@ function handleNewCard(card) {
                 .likeCard(card._id)
                 .then((res) => {
                     newCard.likeAmount(res.likes);
-                    newCard.likeCard();
+                    newCard.like();
                 })
                 .catch((err) => console.log(`Ошибка: ${err}`));
         },
@@ -144,7 +143,7 @@ function handleNewCard(card) {
                 .deleteLikeCard(card._id)
                 .then((res) => {
                     newCard.likeAmount(res.likes);
-                    newCard.deleteLikeCard();
+                    newCard.disLike();
                 })
                 .catch((err) => console.log(`Ошибка: ${err}`));
         }
@@ -179,3 +178,5 @@ profileAvatarEdit.addEventListener('click', () => {
     popupEditAvatar.open();
     validatorEditAvatar.resetValidation();
 });
+
+

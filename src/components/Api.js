@@ -17,33 +17,36 @@ export default class Api {
     }).then((res) => this._getResponseServer(res));
   }
 
-  _patchFetch(pathUrl, bodyConstructor) {
-    return fetch(`${this._baseUrl}${pathUrl}`, {
+  changeProfile(data) {
+    return fetch(`${this._baseUrl}/users/me`, {
       method: 'PATCH',
-      headers: this._headers,
-      body: JSON.stringify(bodyConstructor),
+      headers: {
+        authorization: '6db5ed96-35c5-440d-93a7-5d404ebdd013',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({name:data.userName, about: data.userInfo,})
     }).then((res) => this._getResponseServer(res));
   }
 
-  _postFetch(pathUrl, bodyConstructor) {
-    return fetch(`${this._baseUrl}${pathUrl}`, {
+  addCard(data) {
+    return fetch(`${this._baseUrl}/cards`, {
       method: 'POST',
-      headers: this._headers,
-      body: bodyConstructor,
+      headers: {
+        authorization: '6db5ed96-35c5-440d-93a7-5d404ebdd013',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({name: data.name, link: data.link,})
     }).then((res) => this._getResponseServer(res));
   }
 
-  _deleteFetch(pathUrl) {
-    return fetch(`${this._baseUrl}${pathUrl}`, {
-      method: 'DELETE',
-      headers: this._headers,
-    }).then((res) => this._getResponseServer(res));
-  }
-
-  _putFetch(pathUrl) {
-    return fetch(`${this._baseUrl}${pathUrl}`, {
-      method: 'PUT',
-      headers: this._headers,
+  changeAvatar(data) {
+    return fetch(`${this._baseUrl}/users/me/avatar`, {
+      method: 'PATCH',
+      headers: {
+        authorization: '6db5ed96-35c5-440d-93a7-5d404ebdd013',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({avatar: data,})
     }).then((res) => this._getResponseServer(res));
   }
 
@@ -55,41 +58,33 @@ export default class Api {
     return this._getFetch('/cards')
   }
 
-  changeProfile(data) {
-   this._patchFetch('/users/me', 
-      {
-        name: data.userName,
-        about: data.userInfo,
-      }
-    );
-  }
-
-  changeAvatar(data) {
-    return this._patchFetch(`/users/me/avatar`, 
-      JSON.stringify({
-        avatar: data,
-      })
-    );
-  }
-
-  addCard(data) {
-    return this._postFetch('/cards',
-      JSON.stringify({
-        name: data.name,
-        link: data.link,
-      })
-    );
-  }
-
   deleteCard(id) {
-    return this._deleteFetch(`/cards/${id}`);
+    return fetch(`${this._baseUrl}/cards/${id}`, {
+      method: 'DELETE',
+      headers: {
+        authorization: '6db5ed96-35c5-440d-93a7-5d404ebdd013',
+        'Content-Type': 'application/json'
+      },
+    }).then((res) => this._getResponseServer(res));
   }
 
   likeCard(id) {
-    return this._putFetch(`/cards/${id}/likes`);
+    return fetch(`${this._baseUrl}/cards/${id}/likes`, {
+      method: 'PUT',
+      headers: {
+        authorization: '6db5ed96-35c5-440d-93a7-5d404ebdd013',
+        'Content-Type': 'application/json'
+      },
+    }).then((res) => this._getResponseServer(res));
   }
 
   deleteLikeCard(id) {
-    return this._deleteFetch(`/cards/${id}/likes`);
+    return fetch(`${this._baseUrl}/cards/${id}/likes`, {
+      method: 'DELETE',
+      headers: {
+        authorization: '6db5ed96-35c5-440d-93a7-5d404ebdd013',
+        'Content-Type': 'application/json'
+      },
+    }).then((res) => this._getResponseServer(res));
   }
 }
