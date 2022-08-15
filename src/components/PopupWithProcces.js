@@ -10,10 +10,10 @@ export default class PopupWithProcces extends Popup {
   };
 
   downloadProcces(download, line) {
-    if(download){
+    if (download) {
       this._submitBtn.textContent = line;
     }
-  };
+  }
 
   open(data, card) {
     super.open();

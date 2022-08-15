@@ -31,7 +31,7 @@ export default class Card {
 
   likeAmount(likes) {
     this._likeAmount = this._element.querySelector('.element__like-amount');
-    if (likes.length === 0) {
+    if (!likes.length) {
       this._likeAmount.textContent = '';
     } else {
       this._likeAmount.textContent = likes.length;

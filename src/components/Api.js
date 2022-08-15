@@ -17,24 +17,19 @@ export default class Api {
     }).then((res) => this._getResponseServer(res));
   }
 
-  changeProfile(data) {
+  changeProfile = (data) => {
+    console.log(data)
     return fetch(`${this._baseUrl}/users/me`, {
       method: 'PATCH',
-      headers: {
-        authorization: '6db5ed96-35c5-440d-93a7-5d404ebdd013',
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({name:data.userName, about: data.userInfo,})
+      headers: this._headers,
+      body: JSON.stringify({name: data.name, about: data.about})
     }).then((res) => this._getResponseServer(res));
   }
 
   addCard(data) {
     return fetch(`${this._baseUrl}/cards`, {
       method: 'POST',
-      headers: {
-        authorization: '6db5ed96-35c5-440d-93a7-5d404ebdd013',
-        'Content-Type': 'application/json'
-      },
+      headers: this._headers,
       body: JSON.stringify({name: data.name, link: data.link,})
     }).then((res) => this._getResponseServer(res));
   }
@@ -42,10 +37,7 @@ export default class Api {
   changeAvatar(data) {
     return fetch(`${this._baseUrl}/users/me/avatar`, {
       method: 'PATCH',
-      headers: {
-        authorization: '6db5ed96-35c5-440d-93a7-5d404ebdd013',
-        'Content-Type': 'application/json'
-      },
+      headers: this._headers,
       body: JSON.stringify({avatar: data,})
     }).then((res) => this._getResponseServer(res));
   }
@@ -61,30 +53,21 @@ export default class Api {
   deleteCard(id) {
     return fetch(`${this._baseUrl}/cards/${id}`, {
       method: 'DELETE',
-      headers: {
-        authorization: '6db5ed96-35c5-440d-93a7-5d404ebdd013',
-        'Content-Type': 'application/json'
-      },
+      headers: this._headers,
     }).then((res) => this._getResponseServer(res));
   }
 
   likeCard(id) {
     return fetch(`${this._baseUrl}/cards/${id}/likes`, {
       method: 'PUT',
-      headers: {
-        authorization: '6db5ed96-35c5-440d-93a7-5d404ebdd013',
-        'Content-Type': 'application/json'
-      },
+      headers: this._headers,
     }).then((res) => this._getResponseServer(res));
   }
 
   deleteLikeCard(id) {
     return fetch(`${this._baseUrl}/cards/${id}/likes`, {
       method: 'DELETE',
-      headers: {
-        authorization: '6db5ed96-35c5-440d-93a7-5d404ebdd013',
-        'Content-Type': 'application/json'
-      },
+      headers: this._headers,
     }).then((res) => this._getResponseServer(res));
   }
 }

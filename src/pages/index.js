@@ -26,14 +26,21 @@ import {
     profileAvatarEdit,
     formForEditAvatar,
     popupForDeleteCard,
+    lineText,
+    lineTextDelete,
 } from '../utils/constants.js';
 
 let userID;
 
 const api = new Api('https://mesto.nomoreparties.co/v1/cohort-47', {
     authorization: '6db5ed96-35c5-440d-93a7-5d404ebdd013',
-    'Content-Type': 'application.json',
+    'Content-Type': 'application/json',
 });
+
+// const api = new Api('https://mesto.nomoreparties.co/v1/cohort-47', {
+//     authorization: '6db5ed96-35c5-440d-93a7-5d404ebdd013',
+//     'Content-Type': 'application.json',
+// });
 
 const validatorEditAuthor = new FormValidator(selectorsNamesForValidation, popupFormEditAuthor);
 const validatorAddCard = new FormValidator(selectorsNamesForValidation, cardAddForm);
@@ -53,11 +60,11 @@ const dataUserInfo = new UserInfo (
 );
 
 const popupProfile = new PopupWithForm (profilePopup, (data) => {
-    popupProfile.downloadProcces(true, 'Сохранение...');
+    popupProfile.downloadProcces(true, lineText);
     api
         .changeProfile(data)
-        .then((userInfo) => {
-            dataUserInfo.setUserInfo(userInfo);
+        .then((name) => {
+            dataUserInfo.setUserInfo(name);
             popupProfile.close();
         })
         .catch((err) => console.log(`Ошибка: ${err}`))
@@ -66,7 +73,7 @@ const popupProfile = new PopupWithForm (profilePopup, (data) => {
 
 
 const popupNewCard = new PopupWithForm (popUpAdd, (data) => {
-    popupNewCard.downloadProcces(true, 'Сохранение...');
+    popupNewCard.downloadProcces(true, lineText);
     api
         .addCard(data)
         .then((card) => {
@@ -80,7 +87,7 @@ const popupNewCard = new PopupWithForm (popUpAdd, (data) => {
 const popupScaleImage = new PopupWithImage (popupForScaleImage);
 
 const popupDeleteCard = new PopupWithProcces (popupForDeleteCard,  function (data, card) {
-    popupDeleteCard.downloadProcces(true, 'Удаление...');
+    popupDeleteCard.downloadProcces(true, lineTextDelete);
     api
         .deleteCard(data._id)
         .then(() => {
@@ -92,11 +99,12 @@ const popupDeleteCard = new PopupWithProcces (popupForDeleteCard,  function (dat
 });
 
 const popupEditAvatar = new PopupWithForm (popupAvatar, async function (data) {
-    popupEditAvatar.downloadProcces(true, 'Сохранение...');
+    popupEditAvatar.downloadProcces(true, lineText);
+    console.log(data)
     api
         .changeAvatar(data.link)
-        .then((data) => {
-            dataUserInfo.setUserInfo(data);
+        .then((newData) => {
+            dataUserInfo.setUserInfo(newData);
             popupEditAvatar.close();
         })
         .catch((err) => console.log(`Ошибка: ${err}`))
@@ -163,9 +171,9 @@ popupDeleteCard.setEventListeners();
 
 profileOpenBtn.addEventListener('click', () => {
     popupProfile.open();
-    const {userName, userInfo} = dataUserInfo.getUserInfo();
-    authorNameEdit.value = userName;
-    authorProfessionEdit.value = userInfo;
+    const {name, about} = dataUserInfo.getUserInfo();
+    authorNameEdit.value = name;
+    authorProfessionEdit.value = about;
     validatorEditAuthor.resetValidation();
 });
 

@@ -7,14 +7,15 @@ export default class UserInfo {
 
   getUserInfo() {
     this._userInfoValue = {
-      userName: this._userNameElement.textContent,
-      userInfo: this._userInfoElement.textContent,
-      userAvatar: this._userAvatarElement.src,
+      name: this._userNameElement.textContent,
+      about: this._userInfoElement.textContent,
+      avatar: this._userAvatarElement.src,
     };
     return this._userInfoValue;
   }
 
   setUserInfo(newData) {
+    console.log(newData)
     this._userNameElement.textContent = newData.name;
     this._userInfoElement.textContent = newData.about;
     this._userAvatarElement.src = newData.avatar;

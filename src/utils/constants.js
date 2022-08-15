@@ -35,3 +35,5 @@ export const formForEditAvatar = popupAvatar.querySelector('.popup__form_type_ed
 
 export const popupForDeleteCard = document.querySelector('.popup_type_remove-card');
 export const deleteCardPopupOpen = document.querySelector('.element__btn-deleete');
+export const lineText = 'Сохранение...';
+export const lineTextDelete = 'Удаление...';
