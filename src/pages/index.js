@@ -37,11 +37,6 @@ const api = new Api('https://mesto.nomoreparties.co/v1/cohort-47', {
     'Content-Type': 'application/json',
 });
 
-// const api = new Api('https://mesto.nomoreparties.co/v1/cohort-47', {
-//     authorization: '6db5ed96-35c5-440d-93a7-5d404ebdd013',
-//     'Content-Type': 'application.json',
-// });
-
 const validatorEditAuthor = new FormValidator(selectorsNamesForValidation, popupFormEditAuthor);
 const validatorAddCard = new FormValidator(selectorsNamesForValidation, cardAddForm);
 const validatorEditAvatar = new FormValidator(selectorsNamesForValidation, formForEditAvatar);
