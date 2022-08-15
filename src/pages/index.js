@@ -95,7 +95,6 @@ const popupDeleteCard = new PopupWithProcces (popupForDeleteCard,  function (dat
 
 const popupEditAvatar = new PopupWithForm (popupAvatar, async function (data) {
     popupEditAvatar.downloadProcces(true, lineText);
-    console.log(data)
     api
         .changeAvatar(data.link)
         .then((newData) => {
