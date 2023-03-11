@@ -1,12 +1,10 @@
-# Проект: Место
+# Projekt: Miejsce
 
-Проект демонстрирует работу примитивного JS. Используются адаптивная верстка, грид-сетка.
+Projekt demonstruje działanie vanila JS. Stosuje się układ adaptacyjny,siatkę.
 
-Дополнения: 
-- вставка начальных 6 карточек из массива
-- возможность добавления новых карточек по названию и ссылке
-- удаление/лайк/увеличение карточки
-- второе попап окно для добавления карточки
-- добавление валидации, с использованием стандартных браузерных ошибок
-
-Ссылка на GH-pages: https://iwtoit.github.io/mesto/index.html
+Dodatek:
+- wstawianie początkowych 6 kart z tablicy
+- możliwość dodawania nowych kartek według nazwy i linku
+- usuwanie/polubienie / powiększanie karty
+- drugie okno popup, aby dodać kartę
+- dodawanie walidacji przy użyciu standardowych błędów przeglądarki
